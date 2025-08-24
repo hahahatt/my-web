@@ -1,0 +1,17 @@
+/* 크롬, 사파리, 엣지 (webkit 기반) */
+::-webkit-scrollbar {
+  width: 8px;              /* 스크롤바 두께 */
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;     /* 스크롤 트랙 색상 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #444, #888); /* 손잡이 색 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #666, #aaa); /* hover 시 밝게 */
+}

@@ -1,0 +1,50 @@
+
+/* 별똥별 */
+.shooting-star {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: radial-gradient(circle, white 40%, transparent 70%);
+  box-shadow: 0 0 15px white, 0 0 30px white;
+  transform: rotate(-45deg); /* ⭐️ 전체 그룹을 대각선으로 기울임 */
+  animation: shoot 2.5s linear infinite;
+  opacity: 0;
+}
+
+/* 꼬리 (이제는 그냥 수평 라인만 있으면 됨) */
+.shooting-star::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(to right, white, transparent);
+  transform: translateY(-90%);
+  opacity: 0.8;
+}
+
+/* 별똥별 애니메이션 */
+@keyframes shoot {
+  0% {
+    transform: translate(0, 0) rotate(-45deg) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-80px, 80px) rotate(-45deg) scale(1);
+  }
+  100% {
+    transform: translate(-600px, 600px) rotate(-45deg) scale(0.3);
+    opacity: 0;
+  }
+}
+/* 여러 개 위치 + 딜레이 */
+.shooting-star:nth-child(1) { top: 5%; left: 80%; animation-delay: 0s; }
+.shooting-star:nth-child(2) { top: 20%; left: 70%; animation-delay: 1.5s; }
+.shooting-star:nth-child(3) { top: 10%; left: 60%; animation-delay: 3s; }
+.shooting-star:nth-child(4) { top: 15%; left: 40%; animation-delay: 2s; }
+.shooting-star:nth-child(5) { top: 25%; left: 90%; animation-delay: 4s; }
